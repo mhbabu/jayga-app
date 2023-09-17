@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "83d528a0-33da-493f-b002-51bbe701488a",
+		"name": "Jayga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10520607"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "UserRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mahadi Hassan Babu",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Mahadihassan.cse@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{jayga}}/api/user/register",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mahadihassan.cse@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{jayga}}/api/user/login",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthUser",
+			"item": [
+				{
+					"name": "AuthUserList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{jayga}}/api/auth-user/list",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"auth-user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{jayga}}/api/auth-user/logout",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"auth-user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|ga5jsZC76nR30fnIvYxmuK5awQBGWtyTrdKEJOSU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "UploadImages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "vendor_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{jayga}}/api/auth-user/upload/images",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"auth-user",
+								"upload",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetImages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{jayga}}/api/auth-user/upload/images",
+							"host": [
+								"{{jayga}}"
+							],
+							"path": [
+								"api",
+								"auth-user",
+								"upload",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "1|B9l822aZaAd7prLaKeINgUUeocaCEgUjRX5MF0Ud",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "jayga",
+			"value": "http://laravel-app.local"
+		}
+	]
+}
